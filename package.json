@@ -1,0 +1,26 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-report/ && rimraf allure-results && rimraf test-results",
+    "test:test": "npm run clean && cross-env test_env=test npx playwright test --reporter=line,allure-playwright",
+    "test:staging": "cross-env test_env=staging npx playwright test --headed",
+    "test:production": "env-cmd --environments production --no-override playwright test",
+    "allure:report": "npx allure generate ./allure-results && allure open"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.35.1",
+    "allure-commandline": "^2.23.0",
+    "allure-playwright": "^2.4.0",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
