@@ -14,6 +14,8 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install
+    - name: Install rimraf
+        run: npm install rimraf  
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
