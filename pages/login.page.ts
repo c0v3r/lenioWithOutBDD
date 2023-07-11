@@ -13,12 +13,12 @@ export class LoginPage {
   }
 
   public async goto(): Promise<void> {
-    await this.page.goto(`${ENV.BASE_URL}`);
+    await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); //`${ENV.BASE_URL}`);
   }
 
   public async login(username: string, password: string): Promise<void> {
-    await this.page.locator(this.usernameTxt).fill(`${ENV.USERNAME}`);
-    await this.page.locator(this.passwordTxt).fill(`${ENV.PASSWORD}`);
+    await this.page.locator(this.usernameTxt).fill(username);//`${ENV.USERNAME}`);
+    await this.page.locator(this.passwordTxt).fill(password);//`${ENV.PASSWORD}`);
     await this.page.locator(this.signInbtn).click();
   }
 }
