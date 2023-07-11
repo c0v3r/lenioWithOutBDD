@@ -9,7 +9,7 @@ test.describe("Login Test Suite", () => {
     await loginPage.goto();
   });
 
-  test.only("PageObject", async ({ page }) => {
+  test("PageObject", async ({ page }) => {
     console.log(user);
     const loginpage = new LoginPage(page);
     const homepage = new HomePage(page);
