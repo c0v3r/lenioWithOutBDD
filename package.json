@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf allure-report/ && rimraf allure-results && rimraf test-results",
+    "clean": "rimraf allure-report/ && rimraf allure-results && rimraf test-results && playwright-report",
     "test:test": "npm run clean && cross-env test_env=test npx playwright test",
     "test:test2": "npm run clean && npx playwright test --reporter=line,allure-playwright",
     "test:staging": "cross-env test_env=staging npx playwright test --headed",
