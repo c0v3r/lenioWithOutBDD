@@ -20,15 +20,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npm run test:test2
-
-    - uses: actions/upload-artifact@master
-      with:
-        name: allure-results
-        path: allure-results
-        retention-days: 20
         
     - name: Get Allure history
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       if: always()
       continue-on-error: true
       with:
@@ -48,8 +42,8 @@ jobs:
 
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v2
       with:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history  
+        PUBLISH_DIR: allure-history
