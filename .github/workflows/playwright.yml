@@ -21,31 +21,9 @@ jobs:
     - name: Run Playwright tests
       run: npm run test:test2
         
-    - name: Test marketplace action
-      uses: PavanMudigonda/allure-html-reporter-github-pages@v1.0
-      if: always()
-      id: allure-report
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        workflow_id: main.yml
-        allure_results: allure-results
-        gh_pages: gh-pages
-    
-    - name: Publish Github Pages
-      if: ${{ always() }}
-      uses: peaceiris/actions-gh-pages@v3.8.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: allure-history. # Previous Step provides output folder "allure-history" this needs to be uploaded to Github Pages
-        keep_files: true 
-
-    - name: Post the link to the report
-      if: always()
-      uses: Sibz/github-status-action@v1
-      with: 
-          authToken: ${{secrets.GITHUB_TOKEN}}
-          context: 'Test report'
-          state: 'success'
-          sha: ${{ github.event.pull_request.head.sha }}
-          target_url: PavanMudigonda.github.io/allure-html-reporter-github-pages/${{ github.run_number }}
+   - uses: actions/upload-artifact@v3
+     if: always()
+     with:
+       name: stg-playwright-report
+       path: allure-results/
+       retention-days: 10
