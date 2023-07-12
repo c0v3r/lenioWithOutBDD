@@ -17,6 +17,8 @@ export class LoginPage {
   }
 
   public async login(username: string): Promise<void> {
+    console.log("username :"+ username)
+    console.log("password :"+ ENV.PASSWORD)
     await this.page.locator(this.usernameTxt).fill(username);
     await this.page.locator(this.passwordTxt).fill(`${ENV.PASSWORD}`);
     await this.page.locator(this.signInbtn).click();
