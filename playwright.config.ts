@@ -13,8 +13,6 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  // Timeout
-  timeout: 15000,
  
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -37,10 +35,10 @@ export default defineConfig({
     trace: 'on-first-retry',
     
     // Browser options
-     headless: true,    // Context options
-     viewport: { width: 1280, height: 720 },    // Artifacts
-     screenshot: 'on',
-     video: 'on'
+    // headless: true,    // Context options
+    // viewport: { width: 1280, height: 720 },    // Artifacts
+    // screenshot: 'on',
+    // video: 'on'
   },
   globalSetup: "utils/globalSetup.ts",
 
