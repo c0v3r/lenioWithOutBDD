@@ -1,6 +1,9 @@
 # Ignore node_modules and report
 node_modules/
 /playwright-report/
+/allure-results/
+/allure-report/
+screenshots/
 
 # Ignore all log files
 *.log

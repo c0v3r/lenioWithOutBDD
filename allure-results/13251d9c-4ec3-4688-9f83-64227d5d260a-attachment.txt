@@ -1,5 +1,0 @@
-{
-  username: 'Admin',
-  pass: 'admin123',
-  default: { username: 'Admin', pass: 'admin123' }
-}

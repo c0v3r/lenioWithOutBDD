@@ -13,7 +13,7 @@ export class LoginPage {
   }
 
   public async goto(): Promise<void> {
-    await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); //`${ENV.BASE_URL}`);
+    await this.page.goto(`${ENV.BASE_URL}`); //`${ENV.BASE_URL}`);
   }
 
   public async login(username: string, password: string): Promise<void> {
