@@ -37,8 +37,8 @@ export default defineConfig({
     // Browser options
     // headless: true,    // Context options
     // viewport: { width: 1280, height: 720 },    // Artifacts
-    // screenshot: 'on',
-    // video: 'on'
+     screenshot: 'on',
+     video: 'on'
   },
   globalSetup: "utils/globalSetup.ts",
 
