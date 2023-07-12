@@ -14,7 +14,7 @@ test.describe("Login Test Suite", () => {
     const loginpage = new LoginPage(page);
     const homepage = new HomePage(page);
 
-    await loginpage.login(user.username, user.pass);
+    await loginpage.login(user.username);
     await (await homepage.dashboard()).waitFor({state:"visible"});
     await expect(await homepage.dashboard()).toBeVisible();
     await expect(await homepage.dashboard()).toContainText("Dashboard");
