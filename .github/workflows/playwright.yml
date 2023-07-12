@@ -21,9 +21,9 @@ jobs:
     - name: Run Playwright tests
       run: npm run test:test2
         
-   - uses: actions/upload-artifact@v3
-     if: always()
-     with:
-       name: stg-playwright-report
-       path: allure-results/
-       retention-days: 10
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: stg-playwright-report
+        path: allure-results/
+        retention-days: 10
