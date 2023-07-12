@@ -25,5 +25,5 @@ jobs:
       if: always()
       with:
         name: stg-playwright-report
-        path: allure-results/
+        path: playwright-report/
         retention-days: 10
